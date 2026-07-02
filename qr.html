@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Tomasa Resto — Carta</title>
+<link rel="icon" type="image/x-icon" href="img_tomasa_menu/tomasalogo1.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2BBAC5;--teal-dim:rgba(43,186,197,0.12);--teal-line:rgba(43,186,197,0.3);
+  --bg:#0D0D0D;--text:#E8E4DE;--text-dim:rgba(232,228,222,0.45);--text-mid:rgba(232,228,222,0.68);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+/* HEADER */
+header{
+  padding:28px 32px 20px;text-align:center;
+  border-bottom:1px solid rgba(43,186,197,0.1);
+  flex-shrink:0;
+}
+header img{height:56px;width:auto;object-fit:contain;}
+.header-sub{
+  font-size:.6rem;letter-spacing:4px;text-transform:uppercase;
+  color:var(--teal);margin-top:10px;display:block;
+}
+
+/* INTRO */
+.intro{
+  text-align:center;padding:36px 24px 28px;flex-shrink:0;
+}
+.intro h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,6vw,2.8rem);font-weight:300;font-style:italic;
+  color:var(--text);line-height:1.1;margin-bottom:10px;
+}
+.intro p{font-size:.82rem;color:var(--text-mid);letter-spacing:.5px;}
+
+/* GRID */
+.qr-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+  flex:1;
+  background:rgba(255,255,255,0.03);
+}
+.qr-card{
+  position:relative;overflow:hidden;
+  aspect-ratio:1/1;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.qr-card img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.45) saturate(0.7);
+  transition:transform .6s cubic-bezier(0.25,0.46,0.45,0.94),filter .4s;
+}
+.qr-card:active img{transform:scale(1.05);filter:brightness(0.3) saturate(0.6);}
+.qr-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,transparent 30%,rgba(0,0,0,0.65) 100%);
+}
+.qr-teal-line{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--teal);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s;
+}
+.qr-card:active .qr-teal-line{transform:scaleX(1);}
+.qr-body{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:clamp(14px,4vw,28px);
+}
+.qr-tag{
+  font-size:.55rem;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--teal);margin-bottom:5px;display:block;
+}
+.qr-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.2rem,5vw,1.9rem);
+  font-weight:300;font-style:italic;
+  color:#fff;line-height:1.05;
+}
+.qr-sep{
+  width:24px;height:1px;background:var(--teal);
+  margin:8px 0 6px;
+}
+.qr-cta{
+  font-size:.58rem;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(232,228,222,0.5);
+  display:flex;align-items:center;gap:6px;
+}
+.qr-cta span{color:var(--teal);}
+
+/* FOOTER */
+footer{
+  padding:20px 24px;text-align:center;
+  border-top:1px solid rgba(255,255,255,0.05);flex-shrink:0;
+}
+footer p{font-size:.68rem;color:var(--text-dim);letter-spacing:1px;}
+footer a{color:var(--teal);text-decoration:none;}
+
+@media(min-width:600px){
+  .qr-grid{grid-template-columns:1fr 1fr;}
+  .qr-card{aspect-ratio:1/1;}
+}
+@media(min-width:900px){
+  .qr-grid{grid-template-columns:1fr 1fr 1fr;}
+}
+@media(max-width:380px){
+  .qr-grid{grid-template-columns:1fr;}
+  .qr-card{aspect-ratio:3/2;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="img_tomasa_menu/tomasalogo.webp" alt="Tomasa Logo">
+  <span class="header-sub">Buenos Aires · Argentina</span>
+</header>
+
+<div class="intro">
+  <h1>¿Qué vas<br>a pedir hoy?</h1>
+  <p>Tocá la carta que quieras ver</p>
+</div>
+
+<div class="qr-grid">
+
+  <div class="qr-card" onclick="window.location='menu.html#comida'">
+    <img src="img_tomasa_menu/almuerzoycena.webp"  alt="Almuerzo y Cena" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Mediodía & Noche</span>
+      <div class="qr-title">Almuerzo<br>& Cena</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver carta <span>→</span></div>
+    </div>
+  </div>
+
+  <div class="qr-card" onclick="window.location='menu.html#merienda'">
+    <img src="img_tomasa_menu/desayunoymerienda.webp"  alt="Desayuno & Merienda" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Mañana & Tarde</span>
+      <div class="qr-title">Desayuno &<br>Merienda</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver carta <span>→</span></div>
+    </div>
+  </div>
+
+  <div class="qr-card" onclick="window.location='menu.html#vinos'">
+    <img src="img_tomasa_menu/cartadevinos.webp"  alt="Vinos" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Selección curada</span>
+      <div class="qr-title">Carta de<br>Vinos</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver selección <span>→</span></div>
+    </div>
+  </div>
+
+  <div class="qr-card" onclick="window.location='menu.html#postres'">
+    <img src="img_tomasa_menu/postres.webp"  alt="Postres" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Para el final perfecto</span>
+      <div class="qr-title">Postres</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver carta <span>→</span></div>
+    </div>
+  </div>
+
+  <div class="qr-card" onclick="window.location='menu.html#bebidas'">
+    <img src="img_tomasa_menu/bebidas.webp"  alt="Bebidas" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Refrescantes</span>
+      <div class="qr-title">Bebidas</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver carta <span>→</span></div>
+    </div>
+  </div>
+
+  <div class="qr-card" onclick="window.location='menu.html#tragos'">
+    <img src="img_tomasa_menu/tragosyespumantes.webp"  alt="Tragos & Espumantes" loading="lazy">
+    <div class="qr-grad"></div>
+    <div class="qr-teal-line"></div>
+    <div class="qr-body">
+      <span class="qr-tag">Cocktails & Burbujas</span>
+      <div class="qr-title">Tragos &<br>Espumantes</div>
+      <div class="qr-sep"></div>
+      <div class="qr-cta">Ver carta <span>→</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <a href="index.html">Tomasa Resto</a> · Buenos Aires</p>
+</footer>
+
+</script>
+</body>
+</html>
