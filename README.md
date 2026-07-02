@@ -1,21 +1,21 @@
-# Tomasa Resto
+# Facundo Montero
 
-Restaurante — sitio web con menú digital por categorías y acceso vía QR.
-
-🔗 [Demo en vivo](https://tomasaresto.com)
+Front-end developer (Buenos Aires, AR) en transición a QA Analyst.
 
 ## Stack
-HTML · CSS · JavaScript vanilla (sin build tools)
+`HTML` `CSS` `JavaScript` `WordPress` `Git`
 
-## Estructura
-```
-index.html   — landing
-menu.html    — carta completa (comida, merienda, vinos, postres, bebidas, tragos)
-qr.html      — landing de acceso rápido por QR, redirige a secciones de menu.html
-img_tomasa_menu/ — assets
-```
+## QA
+Aplico testing manual y automatizado (Playwright) a mis propios proyectos: test plans, bug reports con severidad/prioridad, tests de regresión. Ver ejemplo completo en [`sushi-katsu-repo/testing`](https://github.com/Facundo-Montero/sushi-katsu-repo/tree/main/testing).
 
-## Features
-- Deep linking por categoría (`menu.html#vinos`, `#postres`, etc.) desde QR de mesa
-- Grid de acceso rápido con 6 categorías
-- Diseño dark, tipografía Cormorant Garamond + DM Sans
+## Proyectos
+
+| Proyecto | Descripción | Demo |
+|---|---|---|
+| [Sushi Katsu](https://github.com/Facundo-Montero/sushi-katsu-repo) | Restaurante — carrito, menú, QA docs | [sushikatsu.com.ar](https://sushikatsu.com.ar) |
+| [Tomasa Resto](https://github.com/Facundo-Montero/tomasa-resto-repo) | Restaurante — menú QR, reservas | [tomasaresto.com](https://tomasaresto.com) |
+| [Portfolio](https://github.com/Facundo-Montero/Facundo-Montero.github.io) | Portfolio orientado a QA | [facundo-montero.github.io](https://facundo-montero.github.io) |
+| [fmonterostudio](https://github.com/Facundo-Montero/fmonterostudio.com) | Portfolio de diseño/dev | [fmonterostudio.com](https://fmonterostudio.com) |
+
+## Contacto
+[Email](mailto:facumontero01@gmail.com) · [Instagram](https://instagram.com/fmonterostudio)
